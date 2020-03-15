@@ -26,7 +26,7 @@ app.get('/stats', (request, response) => {
   response.sendFile(join(__dirname, 'public', 'stats.html'))
 })
 
-require('./config')
+require('./models')
   .then( () => app.listen(process.env.PORT || 3000))
   .catch( error => console.error(error))
 
