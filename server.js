@@ -8,9 +8,7 @@ app.use(express.static(join(__dirname, 'public')))
 app.use(express.urlencoded({extended: true}))
 app.use(express.json())
 
-app.get('./routes')
-
-//app.get(require('./routes'))
+app.use(require('./routes'))
 
 app.get('/', (request, response) => {
   response.sendFile(join(__dirname, 'public', 'index.html'))
