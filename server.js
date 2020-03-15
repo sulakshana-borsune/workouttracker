@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.get('./routes')
 
-app.use(require('./routes'))
+//app.get(require('./routes'))
 
 app.get('/', (request, response) => {
   response.sendFile(join(__dirname, 'public', 'index.html'))
