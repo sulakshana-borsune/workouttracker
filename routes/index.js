@@ -1,5 +1,5 @@
 const router = require('express').Router()
 
-router.use('/api', require('./WorkoutRoutes.js'))
+router.use('/api', require('./workoutRoutes.js'))
 
 module.exports = router

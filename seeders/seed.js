@@ -1,10 +1,6 @@
 let mongoose = require("mongoose");
 let db = require("../models");
 
-mongoose.connect("mongodb://localhost/workoutdb", {
-  useNewUrlParser: true,
-  useFindAndModify: false
-});
 
 const workoutSchema = new mongoose.Schema({
     day: new Date().setDate(new Date().getDate()-10),

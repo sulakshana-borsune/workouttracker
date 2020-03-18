@@ -1,8 +1,5 @@
-const {connect} = require('mongoose')
+const Workout = require('./Workout.js')
 
-module.exports = connect( process.env.MONGODB_URL || process.env.LOCAL_URL, {
-  useNewUrlParser: true,
-  useUnifiedTopology: true,
-  useFindAndModify: false,
-  useCreateIndex: true
-})
+module.exports = Workout
+
+

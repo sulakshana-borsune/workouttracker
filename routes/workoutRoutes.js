@@ -3,7 +3,7 @@ const { Workout } = require('../models')
 
 //get all workouts
 router.get('/workouts', (req, res) => {
-  Workout.find()
+  Workout.findAll()
   .then( workouts => res.json(workouts))
   .catch( error => {
     console.error(error)
