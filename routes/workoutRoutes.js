@@ -1,9 +1,9 @@
 const router = require('express').Router()
-const { Workout } = require('../models')
+const { workout } = require('../models')
 
 //get all workouts
 router.get('/workouts', (req, res) => {
-  Workout.findAll()
+  workout.findAll()
   .then( workouts => res.json(workouts))
   .catch( error => {
     console.error(error)
@@ -13,7 +13,7 @@ router.get('/workouts', (req, res) => {
 
 //get workout by name
 router.get('/workouts/:name', (req, res) => {
-  Workout.find({'name': req.params.name})
+  workout.find({'name': req.params.name})
   .then( workout => res.json(workout))
   .catch( error => {
     console.error(error)
@@ -23,7 +23,7 @@ router.get('/workouts/:name', (req, res) => {
 
 //post a workout
 router.post('/workouts', (req, res) => {
-  Workout.create(req.body)
+  workout.create(req.body)
   .then( () => res.sendStatus(200))
   .catch( error => {
     console.error(error)
@@ -33,7 +33,7 @@ router.post('/workouts', (req, res) => {
 
 //update an exercise
 router.put('/workouts/:id', (req, res) => {
-  Workout.findByIdAndUpdate(req.params.id, req.body)
+  workout.findByIdAndUpdate(req.params.id, req.body)
   .then(() => res.sendStatus(200))
   .catch(error => {
     console.error(error)
@@ -43,7 +43,7 @@ router.put('/workouts/:id', (req, res) => {
 
 //delete an exercise
 router.delete('/workouts/:id', (req, res) => {
-  Workout.findByIdAndDelete(req.params.id)
+  workout.findByIdAndDelete(req.params.id)
   .then( () => res.sendStatus(200))
   .catch( error => {
     console.error(error)

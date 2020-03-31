@@ -1,4 +1,3 @@
-const mongoose = require('mongoose')
 const express = require('express')
 const {join} = require('path')
 const app = express()
@@ -21,7 +20,7 @@ app.get('/stats', (req, res) => {
   res.sendFile(join(__dirname, 'public', 'stats.html'))
 })
 
-app.use(require("./routes"))
+
 require('./config')
-.then(() => app.listen(process.env.PORT ||3000))
-.catch(e => console.error(e))
+  .then( () => app.listen(process.env.PORT || 3000))
+  .catch( error => console.error(error))
