@@ -2,13 +2,13 @@ const router = require('express').Router()
 const { workout } = require('../models')
 
 //get all workouts
+
 router.get('/workouts', (req, res) => {
-  workout.findAll()
-  .then( workouts => res.json(workouts))
-  .catch( error => {
-    console.error(error)
-    res.sendStatus(400)
-  })
+  workout.find()
+    .then(workoutss => 
+    {console.log(workoutss)
+       res.json(workoutss)})
+    .catch(e => console.error(e))
 })
 
 //get workout by name
