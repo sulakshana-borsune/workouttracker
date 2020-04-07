@@ -1,8 +1,9 @@
-const {Schema, model} = require('mongoose')
+const mongoose = require('mongoose')
 
-module.exports = model('workout', new Schema({
+const Workout = mongoose.model('workout', new mongoose.Schema({
   day: {
     type: Date,
+    //default sets to the day that the item was created
     default: Date.now
   },
   exercises:[{
@@ -14,5 +15,7 @@ module.exports = model('workout', new Schema({
     sets: Number,
     distance: Number
   }]
-})
-)
+}))
+
+
+module.exports = Workout

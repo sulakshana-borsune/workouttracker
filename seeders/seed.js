@@ -1,13 +1,13 @@
 let mongoose = require("mongoose");
-let db = require("../models");
+let  Workout = require("../models");
 
-
-const workoutSchema = new mongoose.Schema({
+let workoutSeed = [
+  {
     day: new Date().setDate(new Date().getDate()-10),
     exercises: [
       {
         type: "resistance",
-        name: "Bicep Curl",
+        name: "Bicep Curl", 
         duration: 20,
         weight: 100,
         reps: 10,
@@ -127,11 +127,11 @@ const workoutSchema = new mongoose.Schema({
         distance: 2
       }
     ]
-  })
+  }
+]
 
-
-db.Workout.deleteMany({})
-  .then(() => db.Workout.collection.insertMany(workoutSeed))
+Workout.deleteMany({})
+  .then(() => Workout.collection.insertMany(workoutSeed))
   .then(data => {
     console.log(data.result.n + " records inserted!")
     process.exit(0)

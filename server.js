@@ -2,6 +2,7 @@ require('dotenv').config()
 const express = require('express')
 const {join} = require('path')
 const app = express()
+const mongoose = require('mongoose')
 
 app.use(express.static(join(__dirname, 'public')))
 app.use(express.json())
